@@ -12,18 +12,7 @@
 </head>
 
 <body>
-<div class="container">
-  <div class="row">
-    <div class="col-lg-12 margin-tb">
-      <div class="pull-left">
-        <a class="btn btn-light" href="{{ route('bioskop.index') }}"> Bioskop</a>
-      </div>
-      <div class="pull-right">
-        <a class="btn btn-light" href="#"> Film</a>
-      </div>
-    </div>
-  </div>
-  
+<div class="container">  
   <div class="row">
     <div class="col-lg-12 margin-tb">
       <div class="pull-left">

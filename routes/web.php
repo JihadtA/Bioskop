@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BioskopController;
 use App\Http\Controllers\TiketController;
+use App\Http\Controllers\FilmController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,8 +17,10 @@ use App\Http\Controllers\TiketController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('layout.master');
 });
+
+Route::get('film', [FilmController::class, 'index'])->name('film.index');
 
 Route::get('bioskop', [BioskopController::class, 'index'])->name('bioskop.index');
 // Route::get('bioskop/autocomplete', [BioskopController::class, 'autocomplete'])->name('bioskop.autocomplete');
