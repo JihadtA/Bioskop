@@ -12,14 +12,24 @@
 </head>
 
 <body>
-<div class="container mt-2">
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 margin-tb">
+      <div class="pull-left">
+        <a class="btn btn-light" href="{{ route('bioskop.index') }}"> Bioskop</a>
+      </div>
+      <div class="pull-right">
+        <a class="btn btn-light" href="#"> Film</a>
+      </div>
+    </div>
+  </div>
   
   <div class="row">
     <div class="col-lg-12 margin-tb">
       <div class="pull-left">
         <h3>Beranda - Tiket</h3>
       </div>
-      <div class="pull-right mb-2">
+      <div class="pull-right">
         <a class="btn btn-success" href="{{ route('tiket.create') }}"> Tambah</a>
       </div>
     </div>
@@ -60,5 +70,6 @@
   @endforeach
   </table>
   {!! $tiket->links() !!}
+</div>
 </body>
 </html>

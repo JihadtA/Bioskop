@@ -60,7 +60,11 @@ class TiketController extends Controller
 
     public function edit(Tiket $tiket)
     {
-        return view('tiket.edit',compact('tiket'));
+        $bioskops = Bioskop::get();
+        $response = Http::get('https://api-kelompok-6.herokuapp.com/api/film');
+        $film = $response->json('data.data');
+        
+        return view('tiket.edit',compact('tiket','bioskops','film'));
     }
 
     public function update(Request $request, $id)

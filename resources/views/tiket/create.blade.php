@@ -106,10 +106,8 @@
                             {{-- @foreach ($film as $ui) --}}
                                 {{-- @if ($key == 0) --}}
                                 <tr>
-                                    <option 
-                                    data-row="{{$ui['harga']}}">
-                                        {{$ui['judul']}}
-                                    </option>
+                                    <option data-row="{{$ui['harga']}}">{{$ui['judul']}}</option>
+                                    {{-- <option value="{{$desa->nama_desa}}" @if (isset($datadasar)) @if ($datadasar->nama_desa == $desa->nama_desa) selected @endif @endif>{{$desa->nama_desa}}</option> --}}
                                 </tr>
                                 {{-- @endif --}}
                             @endforeach
@@ -138,7 +136,6 @@
 <script>
     $(document).ready(function() {
         $(document).on('change', '#nama_bioskop', function(){
-            // var res   =  $(this).find(':selected').data('row');
             var res   =  $(this).find(':selected').data('row');
             console.log(res);
             $('#telepon_bioskop').val(res.telepon_bioskop);
@@ -146,13 +143,9 @@
         });
 
         $(document).on('change', '#judul_film', function(){
-            // var res   =  $(this).find(':selected').data('row');
             var res   =  $(this).find(':selected').data('row');
             console.log(res);
-            // $('#rating_film').val('active');
-            // $('#genre_film').val('keisi');
             $('#harga_film').val(res);
-            // $('#tahun_film').val('tahunnya');
         });
     });
 </script>
