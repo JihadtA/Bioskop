@@ -34,21 +34,30 @@
         <th>Id</th>
         <th width="30%">Judul Film</th>
         <th width="30%">Sutradara</th>
-        <th width="30%">Sinopsis</th>
         <th>Tahun Rilis</th>
         <th>Rating</th>
         <th>Harga</th>
-        <th>Genre Id</th>
-        <th>Created</th>
-        <th>Updated</th>
       </tr>
     </thead>
     <tbody>
-      @foreach ($films as $keys => $film)
+      {{-- @foreach ($films as $keys => $film)
         <tr>
           @foreach ($film as $key => $item)
             <th>{{$item}}</th>
           @endforeach
+        </tr>
+      @endforeach --}}
+      @foreach ($films as $keys => $film)
+        <tr>
+          <th>{{$film['id']}}</th>
+          <th>{{$film['judul']}}</th>
+          <th>{{$film['sutradara']}}</th>
+          <th>{{$film['tahun']}}</th>
+          <th>{{$film['rating']}}</th>
+          <th>{{$film['harga']}}</th>
+          {{-- @foreach ($film as $key => $item)
+            <th>{{$item}}</th>
+          @endforeach --}}
         </tr>
       @endforeach
     </tbody>
