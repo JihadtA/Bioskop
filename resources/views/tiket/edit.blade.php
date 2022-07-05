@@ -7,6 +7,10 @@
 
   <title>Beranda - Tiket</title>
   <meta name="csrf-token" content="{{ csrf_token() }}">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" > 
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
   <!-- Favicons -->
 
@@ -210,6 +214,22 @@
 
   <!-- Template Main JS File -->
   <script src="{{asset('js/main.js')}}"></script>
+
+  <script>
+    $(document).ready(function() {
+        $(document).on('change', '#nama_bioskop', function(){
+            var res   =  $(this).find(':selected').data('row');
+            console.log(res);
+            $('#telepon_bioskop').val(res.telepon_bioskop);
+            $('#alamat_bioskop').val(res.alamat_bioskop);
+        });
+        $(document).on('change', '#judul_film', function(){
+            var res   =  $(this).find(':selected').data('row');
+            console.log(res);
+            $('#harga_film').val(res);
+        });
+    });
+</script>
 
 </body>
 

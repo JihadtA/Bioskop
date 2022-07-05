@@ -144,13 +144,12 @@
                         @enderror
                     </div>
                 </div>
-                <br>
-                <start>
-                <div class="">
+                
+                <div class="mt-3">
                     <button type="submit" class="btn btn-primary ml-3">Submit</button>
                     <a class="btn btn-primary" href="{{ route('bioskop.index') }}" enctype="multipart/form-data"> Back</a>
                 </div>
-                </start>
+                
 
             </div>
         </form>
