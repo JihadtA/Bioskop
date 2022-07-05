@@ -1,78 +1,117 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Beranda | Bioskop</title>
-		<meta name="description" content="Some ideas for CSS-only button hover styles and animations" />
-		<meta name="keywords" content="button, hover, css, css-only, animation, style, web design" />
-		<meta name="author" content="Codrops" />
-		<link rel="shortcut icon" href="favicon.ico">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" > 
-		<link rel="stylesheet" href="https://use.typekit.net/rnz2bks.css">
-		<link rel="stylesheet" type="text/css" href="css/base.css" />
-		<script>
-      document.documentElement.className="js";
-      var supportsCssVars=function(){
-        var e,t=document.createElement("style");
-        return t.innerHTML="root: { --tmp-var: bold; }",
-        document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),
-        t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");
-    </script>
-		<script src="//tympanus.net/codrops/adpacks/analytics.js"></script>
-		<style>
-			body #cdawrap {
-				border: 1px solid #000;
-				--cda-bottom: auto;
-				--cda-right: 3.5rem;
-				--cda-left: auto;
-				--cda-text-align: right;
-				--cda-width: 370px;
-				border-radius: 6px;
-				padding: 0.75rem 1rem 1rem;
-				--footer-align: end;
-				--cda-text-size: 0.875rem;
-				--cda-footer-fontsize: 0.785rem;
-				--cda-text-color: #000;
-				position: absolute;
-				transform: translateY(-150%);
-			}
-			@media screen and (max-width: 800px){
-				body #cdawrap {
-					transform: none;
-					border-radius: 0px;
-				}
-			}
-		</style>
-	</head>
-	<body class="demo-1" style="background-color: #f3f2f2">
-		<div class="container">
-        <div class="mt-4">
-          <h1 class="text-center">BIOSKOP</h1>
-          <img src="img/bg.svg" class="img-fluid mx-auto d-block" width="60%">
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Beranda - Film</title>
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+
+  <!-- Favicons -->
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{{asset('vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+  <link href="{{asset('vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
+  <link href="{{asset('vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
+  <link href="{{asset('vendor/quill/quill.snow.css')}}" rel="stylesheet">
+  <link href="{{asset('vendor/quill/quill.bubble.css')}}" rel="stylesheet">
+  <link href="{{asset('vendor/remixicon/remixicon.css')}}" rel="stylesheet">
+  <link href="{{asset('vendor/simple-datatables/style.css')}}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{{asset('css/style.css')}}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: NiceAdmin - v2.2.2
+  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="/" class="logo d-flex align-items-center">
+        <img src="" alt="">
+        <span class="d-none d-lg-block">Bioskopku</span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+      <!-- <span class="d-none d-lg-block">Sumber Rejeki</span> -->
+    </div><!-- End Logo -->
+
+  </header>
+  <!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="/">
+          <i class="ri-home-2-fill"></i>
+          <span>Beranda</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="{{ route('film.index') }}">
+          <i class="ri-movie-fill"></i>
+          <span>Data Film</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="{{ route('bioskop.index') }}">
+          <i class="ri-slideshow-3-fill"></i>
+          <span>Data Bioskop</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="{{ route('tiket.index') }}">
+          <i class="ri-book-fill"></i>
+          <span>Tiket</span>
+        </a>
+      </li>
+
+    </ul>
+
+  </aside><!-- End Sidebar-->
+
+  <main id="main" class="main">
+
+<section class="section">
+    <div class="row">
+        <div class="col-lg-12">
+			<div class="mt-4">
+				<h1 class="text-center">BIOSKOPKU</h1>
+				<img src="img/bg.svg" class="img-fluid mx-auto d-block" width="60%">
+			</div>
         </div>
-        <div class="text-center">
-          <div class="row">
-            <div class="col">
-              <form action="{{ route('bioskop.index') }}">
-                <small><button class="button button--hyperion rounded mr-3 mt-2"><span><span>Bioskop</span></span></button></small>
-              </form>
-            </div>
-            <div class="col">
-              <form action="{{ route('tiket.index') }}">
-                <button class="button button--pan"><span>Tiket</span></button>
-              </form>
-            </div>
-            <div class="col mb-5">
-              <form action="{{ route('film.index') }}">
-                <small>
-                  <button class="button button--hyperion rounded ml-3 mt-2"><span><span>Film</span></span></button>
-                </small>
-              </form>
-            </div>
-          </div>
-        </div>
-    <div class="container">
-	</body>
-  <script src="https://tympanus.net/codrops/adpacks/cda.js"></script>
+    </div>
+</section>
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{{asset('vendor/apexcharts/apexcharts.min.js')}}"></script>
+  <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  <script src="{{asset('vendor/chart.js/chart.min.js')}}"></script>
+  <script src="{{asset('vendor/echarts/echarts.min.js')}}"></script>
+  <script src="{{asset('vendor/quill/quill.min.js')}}"></script>
+  <script src="{{ asset('vendor/simple-datatables/simple-datatables.js') }}"></script>
+  <script src="{{asset('vendor/tinymce/tinymce.min.js')}}"></script>
+  <script src="{{asset('vendor/php-email-form/validate.js')}}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{{asset('js/main.js')}}"></script>
+
+</body>
+
 </html>
